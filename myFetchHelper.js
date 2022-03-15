@@ -4,7 +4,7 @@
  * @param {*} init 
  * @returns JSON
  */
-export async function post(url, init, format) {
+export async function myPost(url, init, format) {
 
   let response = await fetch(url, init, format);
   if (!response.ok) {
@@ -13,7 +13,7 @@ export async function post(url, init, format) {
   return await format;
 };
 
-export async function get(url, format) {
+export async function myGet(url, format) {
   let response = await fetch(url);
   if (!response.ok) {
     throw new Error(`Erreur transmission requête. Statut : ${response.status}`)
