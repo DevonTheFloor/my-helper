@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RegEx Tester</title>
+</head>
+<body>
+  <style>
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    label {
+      margin: 1%;
+    }
+    button {
+      margin:2%;
+    }
+  </style>
+  <main>
+    <label>RegEx : </label>
+    <input type="text" id="regex">
+    <label>Chaîne :</label> 
+    <input type="text" id="totest">
+    <button id="tester">TESTER</button>
+  </main>
+  <script>
+    const tester = document.getElementById('tester');
+    function testIt() {
+      const regex = document.getElementById('regex').value;
+      const toTest = document.getElementById('totest').value;
+      regx = new RegExp(regex);
+      console.log('regex :', regx);
+      console.log('to test :', toTest);
+      const result = regx.test(toTest);
+      alert(result);
+    }
+    tester.addEventListener('click',testIt)
+
+  </script>
+</body>
+</html>
+
+
